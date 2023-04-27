@@ -40,6 +40,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-
+        if(oldVersion < 2){
+            db.execSQL("");
+        }
+        if(oldVersion < 3){
+            db.execSQL("");
+        }
     }
 }
