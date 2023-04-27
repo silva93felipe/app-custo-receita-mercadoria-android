@@ -3,14 +3,12 @@ package com.example.custoreceitamercadoria.Entidades;
 public class Insumo {
 
     private int Id;
-    private int ProducaoId;
-    private double Quantidade;
+    private String Descricao;
     private int TipoMedidaCompraId;
     private int TipoMedidaQuantidadeRepresentadaId;
     private double QuantidadeRepresentanda;
 
     /* Não mapeado no banco de dados */
-    private Producao vProducao;
     private TipoMedida vTipoMedidaCompra;
     private TipoMedida vTipoMedidaQuantidadeRepresentada;
 
@@ -25,20 +23,12 @@ public class Insumo {
         Id = id;
     }
 
-    public int getProducaoId() {
-        return ProducaoId;
+    public String getDescricao() {
+        return Descricao;
     }
 
-    public void setProducaoId(int producaoId) {
-        ProducaoId = producaoId;
-    }
-
-    public double getQuantidade() {
-        return Quantidade;
-    }
-
-    public void setQuantidade(double quantidade) {
-        Quantidade = quantidade;
+    public void setDescricao(String descricao) {
+        Descricao = descricao;
     }
 
     public int getTipoMedidaCompraId() {
@@ -63,14 +53,6 @@ public class Insumo {
 
     public void setQuantidadeRepresentanda(double quantidadeRepresentanda) {
         QuantidadeRepresentanda = quantidadeRepresentanda;
-    }
-
-    public Producao getvProducao() {
-        return vProducao;
-    }
-
-    public void setvProducao(Producao vProducao) {
-        this.vProducao = vProducao;
     }
 
     public TipoMedida getvTipoMedidaCompra() {
