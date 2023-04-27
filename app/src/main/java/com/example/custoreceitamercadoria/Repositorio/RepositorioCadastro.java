@@ -68,6 +68,10 @@ public class RepositorioCadastro {
                     medida.getFator()
             };
             db.execSQL("INSERT INTO tipo_medida (nome, sigla, fator, data_cadastro, data_atualizacao) VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)", parametros);
+            Cursor cur = db.rawQuery("SELECT last_insert_rowid() AS id", null);
+            cur.moveToFirst();
+            id = cur.getInt(cur.getColumnIndex("id"));
+            cur.close();
         }else{
             Object[] parametros = new Object[]{
                     medida.getNome(),
@@ -76,9 +80,6 @@ public class RepositorioCadastro {
                     medida.getId()
             };
             db.execSQL("UPDATE tipo_medida SET nome = ?, sigla = ?, fator = ?, data_atualizacao = CURRENT_TIMESTAMP WHERE id = ?", parametros);
-            Cursor cur = db.rawQuery("SELECT last_insert_rowid() AS id", null);
-            cur.moveToFirst();
-            id = cur.getInt(cur.getColumnIndex("id"));
         }
 
         return id;
