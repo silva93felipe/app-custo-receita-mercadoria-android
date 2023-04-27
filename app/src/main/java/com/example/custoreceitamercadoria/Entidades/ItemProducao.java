@@ -4,17 +4,17 @@ public class ItemProducao {
 
     private int Id;
     private double Quantidade;
-    private int ProdutoId;
-    private int ProdutoItemId;
+    private int ProducaoId;
+    private int InsumoId;
+    private int TipoMedidaId;
+
+    /* Não mapeado no banco de dados */
+    private double Custo;
+    private Producao vProducao;
+    private Insumo vInsumo;
+    private TipoMedida vTipoMedida;
 
     public ItemProducao() {
-    }
-
-    public ItemProducao(int id, double quantidade, int produtoId, int produtoItemId) {
-        Id = id;
-        Quantidade = quantidade;
-        ProdutoId = produtoId;
-        ProdutoItemId = produtoItemId;
     }
 
     public int getId() {
@@ -33,20 +33,60 @@ public class ItemProducao {
         Quantidade = quantidade;
     }
 
-    public int getProdutoId() {
-        return ProdutoId;
+    public int getProducaoId() {
+        return ProducaoId;
     }
 
-    public void setProdutoId(int produtoId) {
-        ProdutoId = produtoId;
+    public void setProducaoId(int producaoId) {
+        ProducaoId = producaoId;
     }
 
-    public int getProdutoItemId() {
-        return ProdutoItemId;
+    public int getInsumoId() {
+        return InsumoId;
     }
 
-    public void setProdutoItemId(int produtoItemId) {
-        ProdutoItemId = produtoItemId;
+    public void setInsumoId(int insumoId) {
+        InsumoId = insumoId;
+    }
+
+    public int getTipoMedidaId() {
+        return TipoMedidaId;
+    }
+
+    public void setTipoMedidaId(int tipoMedidaId) {
+        TipoMedidaId = tipoMedidaId;
+    }
+
+    public double getCusto() {
+        return Custo;
+    }
+
+    public void setCusto(double custo) {
+        Custo = custo;
+    }
+
+    public Producao getvProducao() {
+        return vProducao;
+    }
+
+    public void setvProducao(Producao vProducao) {
+        this.vProducao = vProducao;
+    }
+
+    public Insumo getvInsumo() {
+        return vInsumo;
+    }
+
+    public void setvInsumo(Insumo vInsumo) {
+        this.vInsumo = vInsumo;
+    }
+
+    public TipoMedida getvTipoMedida() {
+        return vTipoMedida;
+    }
+
+    public void setvTipoMedida(TipoMedida vTipoMedida) {
+        this.vTipoMedida = vTipoMedida;
     }
 
     @Override

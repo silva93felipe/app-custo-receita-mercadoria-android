@@ -10,13 +10,6 @@ public class TipoMedida {
     public TipoMedida() {
     }
 
-    public TipoMedida(int id, String nome, String sigla, int fator) {
-        Id = id;
-        Nome = nome;
-        Sigla = sigla;
-        Fator = fator;
-    }
-
     public int getId() {
         return Id;
     }
