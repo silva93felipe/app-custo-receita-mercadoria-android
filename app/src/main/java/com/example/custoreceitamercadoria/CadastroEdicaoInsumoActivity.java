@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class CadastroInsumoActivity extends AppCompatActivity {
+public class CadastroEdicaoInsumoActivity extends AppCompatActivity {
 
     Spinner spinnerTipoMedida;
 
-    String[] listaTipoMedida = new String[]{"Tipo de Medida", "Litro", "Quilo", "Grama", "Mililitro", "Caixa"};
+    String[] listaTipoMedida = new String[]{"", "Litro", "Quilo", "Grama", "Mililitro", "Caixa"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

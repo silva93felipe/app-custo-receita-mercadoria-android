@@ -8,73 +8,77 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardReceita"
-        android:layout_width="351dp"
-        android:layout_height="126dp"
+        android:layout_width="345dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
         android:padding="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.031">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="344dp"
+            android:layout_height="147dp">
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:paddingStart="40dp"
-                android:text="Bolo 60 fatias"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:text="Bolo decorado 60 fatias"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="31dp" />
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="R$ 200,00"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:paddingStart="10dp"
+                android:text="Mais detalhes"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="2dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center|center_horizontal|center_vertical"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/baseline_add_circle_outline_24" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="44dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:paddingStart="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:srcCompat="@drawable/baseline_add_circle_outline_24" />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="Mais detalhes"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="120dp"
-                    android:layout_height="43dp"
-                    android:layout_gravity="center|center_horizontal|center_vertical"
-                    android:gravity="center"
-                    android:lineSpacingExtra="8sp"
-                    android:paddingEnd="10dp"
-                    android:text="R$ 60,00"
-                    android:textAlignment="viewEnd"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 

@@ -11,21 +11,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CustoReceitaMercadoria"
         tools:targetApi="31">
-        <activity
-            android:name=".CadastroInsumoActivity"
-            android:label="Cadastro de Insumo"
-            android:exported="true" >
-                    <intent-filter>
-                        <action android:name="android.intent.action.MAIN" />
-
-                        <category android:name="android.intent.category.LAUNCHER" />
-                    </intent-filter>
-        </activity>
+        <!--<activity
+            android:name=".CadastroEdicaoProducaoActivity"
+            android:exported="false" /> -->
         <!--
         <activity
-            android:name=".ListaIngredientes"
-            android:exported="false" />
+           android:name=".DetalheProducaoActivity"
+           android:exported="false" />
         -->
+        <!--
+        <activity
+           android:name=".ListaInsumos"
+           android:exported="false" />
+        -->
+        <activity
+            android:name=".CadastroEdicaoInsumoActivity"
+            android:exported="true"
+            android:label="Lista de Insumo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

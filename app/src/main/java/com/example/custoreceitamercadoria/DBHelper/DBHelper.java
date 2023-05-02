@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "data_atualizacao TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)");
         db.execSQL("CREATE TABLE insumo (" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
-                "descricao TEXT NOT NULL, " +
+                //por que? "descricao TEXT NOT NULL, " +
                 "tipo_medida_compra_id INTEGER NOT NULL, " +
                 "tipo_medida_quantidade_representada_id INTEGER NOT NULL, " +
                 "quantidade_representada REAL NOT NULL DEFAULT 0, " +

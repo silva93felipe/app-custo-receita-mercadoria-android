@@ -4,11 +4,6 @@ public class ItemProducao {
 
     private int Id;
     private double Quantidade;
-    private int ProducaoId;
-    private int InsumoId;
-    private int TipoMedidaId;
-
-    /* Não mapeado no banco de dados */
     private double Custo;
     private Producao vProducao;
     private Insumo vInsumo;
@@ -31,30 +26,6 @@ public class ItemProducao {
 
     public void setQuantidade(double quantidade) {
         Quantidade = quantidade;
-    }
-
-    public int getProducaoId() {
-        return ProducaoId;
-    }
-
-    public void setProducaoId(int producaoId) {
-        ProducaoId = producaoId;
-    }
-
-    public int getInsumoId() {
-        return InsumoId;
-    }
-
-    public void setInsumoId(int insumoId) {
-        InsumoId = insumoId;
-    }
-
-    public int getTipoMedidaId() {
-        return TipoMedidaId;
-    }
-
-    public void setTipoMedidaId(int tipoMedidaId) {
-        TipoMedidaId = tipoMedidaId;
     }
 
     public double getCusto() {

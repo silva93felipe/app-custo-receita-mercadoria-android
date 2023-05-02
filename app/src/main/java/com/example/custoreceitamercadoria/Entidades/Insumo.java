@@ -4,13 +4,12 @@ public class Insumo {
 
     private int Id;
     private String Descricao;
-    private int TipoMedidaCompraId;
-    private int TipoMedidaQuantidadeRepresentadaId;
     private double QuantidadeRepresentanda;
 
     /* Não mapeado no banco de dados */
     private TipoMedida vTipoMedidaCompra;
     private TipoMedida vTipoMedidaQuantidadeRepresentada;
+    private double ValorCompra;
 
     public Insumo() {
     }
@@ -29,22 +28,6 @@ public class Insumo {
 
     public void setDescricao(String descricao) {
         Descricao = descricao;
-    }
-
-    public int getTipoMedidaCompraId() {
-        return TipoMedidaCompraId;
-    }
-
-    public void setTipoMedidaCompraId(int tipoMedidaCompraId) {
-        TipoMedidaCompraId = tipoMedidaCompraId;
-    }
-
-    public int getTipoMedidaQuantidadeRepresentadaId() {
-        return TipoMedidaQuantidadeRepresentadaId;
-    }
-
-    public void setTipoMedidaQuantidadeRepresentadaId(int tipoMedidaQuantidadeRepresentadaId) {
-        TipoMedidaQuantidadeRepresentadaId = tipoMedidaQuantidadeRepresentadaId;
     }
 
     public double getQuantidadeRepresentanda() {
@@ -69,6 +52,14 @@ public class Insumo {
 
     public void setvTipoMedidaQuantidadeRepresentada(TipoMedida vTipoMedidaQuantidadeRepresentada) {
         this.vTipoMedidaQuantidadeRepresentada = vTipoMedidaQuantidadeRepresentada;
+    }
+
+    public double getValorCompra() {
+        return ValorCompra;
+    }
+
+    public void setValorCompra(double valorCompra) {
+        ValorCompra = valorCompra;
     }
 
     @Override

@@ -11,12 +11,12 @@ import com.example.custoreceitamercadoria.Entidades.TipoMedida;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioCadastro {
+public class CadastroRepository {
 
     private DBHelper dbHelper;
     private SQLiteDatabase db;
 
-    public RepositorioCadastro(Context ctx){
+    public CadastroRepository(Context ctx){
         dbHelper = new DBHelper(ctx);
         db = dbHelper.getWritableDatabase();
     }
