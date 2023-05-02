@@ -1,8 +1,15 @@
 package com.example.custoreceitamercadoria.DBHelper;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.custoreceitamercadoria.Entidades.TipoMedida;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -46,5 +53,17 @@ public class DBHelper extends SQLiteOpenHelper {
         if(oldVersion < 3){
             db.execSQL("");
         }
+    }
+
+    @SuppressLint("Range")
+    public ArrayList<String> getTipoMedida(){
+        SQLiteDatabase db = getReadableDatabase();
+        ArrayList<String> medidas = new ArrayList<>();
+        Cursor cur = db.rawQuery("SELECT descricao FROM tipo_medida ORDER BY descricao ASC", null);
+        cur.moveToFirst();
+        for(int i = 0; i < cur.getCount(); i++){
+            medidas.add(cur.getString(cur.getColumnIndex("descricao")) );
+        }
+        return medidas;
     }
 }

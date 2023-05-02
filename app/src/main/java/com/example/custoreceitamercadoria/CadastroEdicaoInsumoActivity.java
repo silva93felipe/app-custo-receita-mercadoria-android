@@ -6,10 +6,15 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.custoreceitamercadoria.DBHelper.DBHelper;
+import com.example.custoreceitamercadoria.Entidades.TipoMedida;
+import com.example.custoreceitamercadoria.Repositorio.TipoMedidaRepository;
+
 public class CadastroEdicaoInsumoActivity extends AppCompatActivity {
 
     Spinner spinnerTipoMedida;
-
+    //TipoMedidaRepository tipoMedidaRepository = new TipoMedidaRepository(this);
+    DBHelper dbHelper = new DBHelper(this);
     String[] listaTipoMedida = new String[]{"", "Litro", "Quilo", "Grama", "Mililitro", "Caixa"};
 
     @Override
@@ -24,9 +29,9 @@ public class CadastroEdicaoInsumoActivity extends AppCompatActivity {
 
     private void preencherSpinnerTipoMedida() {
         spinnerTipoMedida.setAdapter(new ArrayAdapter<String>(
-                getApplicationContext(),
-                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
-                listaTipoMedida
+               this,
+                android.R.layout.simple_list_item_1,
+                dbHelper.getTipoMedida()
         ));
     }
 }

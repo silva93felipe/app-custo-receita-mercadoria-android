@@ -11,12 +11,12 @@ import com.example.custoreceitamercadoria.Entidades.TipoMedida;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CadastroRepository {
+public class TipoMedidaRepository {
 
     private DBHelper dbHelper;
     private SQLiteDatabase db;
 
-    public CadastroRepository(Context ctx){
+    public TipoMedidaRepository(Context ctx){
         dbHelper = new DBHelper(ctx);
         db = dbHelper.getWritableDatabase();
     }
@@ -30,7 +30,7 @@ public class CadastroRepository {
         for(int i = 0; i < cur.getCount(); i++){
             TipoMedida tmp = new TipoMedida();
             tmp.setId( cur.getInt(cur.getColumnIndex("id")) );
-            tmp.setNome( cur.getString(cur.getColumnIndex("nome")) );
+            tmp.setNome( cur.getString(cur.getColumnIndex("descricao")) );
             tmp.setSigla( cur.getString(cur.getColumnIndex("sigla")) );
             tmp.setFator( cur.getInt(cur.getColumnIndex("fator")) );
             medidas.add(tmp);
@@ -50,46 +50,39 @@ public class CadastroRepository {
 
         for(int i = 0; i < cur.getCount(); i++){
             medida.setId( cur.getInt(cur.getColumnIndex("id")) );
-            medida.setNome( cur.getString(cur.getColumnIndex("nome")) );
+            medida.setNome( cur.getString(cur.getColumnIndex("descricao")) );
             medida.setSigla( cur.getString(cur.getColumnIndex("sigla")) );
             medida.setFator( cur.getInt(cur.getColumnIndex("fator")) );
         }
         return medida;
     }
 
-    @SuppressLint("Range")
-    public int setTipoMedida(TipoMedida medida){
-        int id = medida.getId();
-
-        if(medida.getId() == 0){
-            Object[] parametros = new Object[]{
-                    medida.getNome(),
-                    medida.getSigla(),
-                    medida.getFator()
-            };
-            db.execSQL("INSERT INTO tipo_medida (nome, sigla, fator, data_cadastro, data_atualizacao) VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)", parametros);
-            Cursor cur = db.rawQuery("SELECT last_insert_rowid() AS id", null);
-            cur.moveToFirst();
-            id = cur.getInt(cur.getColumnIndex("id"));
-            cur.close();
-        }else{
-            Object[] parametros = new Object[]{
-                    medida.getNome(),
-                    medida.getSigla(),
-                    medida.getFator(),
-                    medida.getId()
-            };
-            db.execSQL("UPDATE tipo_medida SET nome = ?, sigla = ?, fator = ?, data_atualizacao = CURRENT_TIMESTAMP WHERE id = ?", parametros);
-        }
-
-        return id;
-    }
-    
-    /* Produção */
-    // Implementar
-
-
-    /* Insumo */
-    // Implementar
+//    @SuppressLint("Range")
+//    public int setTipoMedida(TipoMedida medida){
+//        int id = medida.getId();
+//
+//        if(medida.getId() == 0){
+//            Object[] parametros = new Object[]{
+//                    medida.getNome(),
+//                    medida.getSigla(),
+//                    medida.getFator()
+//            };
+//            db.execSQL("INSERT INTO tipo_medida (nome, sigla, fator, data_cadastro, data_atualizacao) VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)", parametros);
+//            Cursor cur = db.rawQuery("SELECT last_insert_rowid() AS id", null);
+//            cur.moveToFirst();
+//            id = cur.getInt(cur.getColumnIndex("id"));
+//            cur.close();
+//        }else{
+//            Object[] parametros = new Object[]{
+//                    medida.getNome(),
+//                    medida.getSigla(),
+//                    medida.getFator(),
+//                    medida.getId()
+//            };
+//            db.execSQL("UPDATE tipo_medida SET nome = ?, sigla = ?, fator = ?, data_atualizacao = CURRENT_TIMESTAMP WHERE id = ?", parametros);
+//        }
+//
+//        return id;
+ //   }
     
 }
